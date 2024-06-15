@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+
+set -e -u
+
+main() {
+    upgrade_packages
+}
+
+upgrade_packages() {
+    pkg upgrade
+    pkg autoclean
+    apt autoremove
+}
+
+main "$@"

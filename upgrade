@@ -3,11 +3,11 @@
 set -e -u
 
 main() {
-    upgrade_packages
+    upgrade_system_packages
     upgrade_python_packages
 }
 
-upgrade_packages() {
+upgrade_system_packages() {
     pkg upgrade -y
     pkg autoclean
     apt autoremove

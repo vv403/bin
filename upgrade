@@ -8,7 +8,7 @@ main() {
 }
 
 upgrade_packages() {
-    pkg upgrade
+    pkg upgrade -y
     pkg autoclean
     apt autoremove
 }

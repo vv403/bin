@@ -4,12 +4,18 @@ set -e -u
 
 main() {
     upgrade_packages
+    upgrade_python_packages
 }
 
 upgrade_packages() {
     pkg upgrade
     pkg autoclean
     apt autoremove
+}
+
+upgrade_python_packages() {
+    python -m pip install --requirement "${HOME}/termux-setup/requirements.txt" --upgrade --user
+    python -m pip cache purge
 }
 
 main "$@"
